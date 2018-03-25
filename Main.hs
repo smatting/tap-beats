@@ -23,6 +23,7 @@ intensityColor intensity =
     in V4 s s 0 0
 
 bmp2Secs bmp = 60.0 / bmp
+secs2bmp secs = 60.0 / secs
 
 (%) :: (RealFrac a) => a -> a -> a  
 (%) dividend divisor = dividend - divisor * (fromIntegral $ floor (dividend/divisor))
@@ -85,7 +86,7 @@ main = do
             (tZero', periodLength') = estimateBeats (tZero, periodLength) timestamps'
             -- tZero'        = if spacePressed then now else tZero
             -- periodLength' = periodLength
-        when spacePressed $ print (tZero', periodLength')
+        when spacePressed $ print (tZero', secs2bmp periodLength')
 
 
         SDL.rendererDrawColor renderer $= V4 maxBound maxBound maxBound maxBound

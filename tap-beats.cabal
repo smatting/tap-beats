@@ -15,9 +15,6 @@ build-type:          Simple
 extra-source-files:  ChangeLog.md
 cabal-version:       >=1.10
 
-data-files:
-  examples/lazyfoo/*.bmp
-
 executable tap-beats
   main-is:             Main.hs
   -- other-modules: Lesson03.hs,
